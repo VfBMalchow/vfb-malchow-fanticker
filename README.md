@@ -1,6 +1,6 @@
 # VfB Malchow · Fan-Ticker
 
-Mobile Spielliste und Live-Spielstand für beide VfB-Malchow-Mannschaften, mit Vereinslogos und Farben. Statische Oberfläche und serverseitige Vercel Functions, ohne zusätzliche npm-Abhängigkeiten.
+Mobile Spielliste und Live-Spielstand für VfB-Malchow-Mannschaften, mit Vereinslogos und Farben. Statische Oberfläche und serverseitige Vercel Functions, ohne zusätzliche npm-Abhängigkeiten.
 
 ## 1. Auf Vercel importieren
 
