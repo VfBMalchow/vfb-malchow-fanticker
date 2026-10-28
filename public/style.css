@@ -15,3 +15,5 @@ footer{flex-direction:column;align-items:center;gap:18px}.source-invite{display:
 .legal-links{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 24px;margin:0}.legal-links a{color:var(--navy);font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:8px 2px}.logo-note{max-width:720px;margin:0;text-align:center;font-size:10px;line-height:1.7;color:#6d8096}
 
 .match-entry{margin-bottom:14px}.match-entry .match{margin-bottom:0}.match-tools{display:flex;justify-content:flex-end;padding:7px 2px 0}.overlay-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d5dce5;border-radius:8px;padding:9px 13px;background:white;color:var(--navy);font:600 12px "DM Sans",sans-serif;text-decoration:none}.overlay-button:hover{background:#edf4e4;border-color:var(--green)}.detailactions{gap:10px;flex-wrap:wrap}
+
+.cache-note{max-width:800px;margin:0;padding:0 8px;text-align:center;color:#6d8096;font-size:11px;line-height:1.8}.cache-note strong{color:var(--navy)}
