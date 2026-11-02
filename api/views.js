@@ -7,6 +7,6 @@ export function createViewsHandler(load=dailyViews){return async(req,res)=>{
  if(origin.host!==req.headers.host||req.headers['sec-fetch-site']==='cross-site')return res.status(403).json({error:'forbidden'});
  }
  try{return res.status(200).json(await load({increment:req.method==='POST'}));}
- catch(error){return res.status(503).json({error:error.message==='counter_not_configured'?'counter_not_configured':'counter_unavailable'});}
+ catch(error){const known=['counter_not_configured','counter_auth_failed','counter_limit_reached','counter_command_failed'];const code=known.includes(error.message)?error.message:'counter_unavailable';console.error('Fan-Ticker counter:',code);return res.status(503).json({error:code});}
 };}
 export default createViewsHandler();
