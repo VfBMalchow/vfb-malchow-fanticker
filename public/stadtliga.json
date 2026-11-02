@@ -1,7 +1,7 @@
 {
   "season": "2026/27",
   "source": "https://www.meinspielplan.de/plan/zshcwv",
-  "fetchedAt": "2026-11-02T15:20:57.156Z",
+  "fetchedAt": "2026-11-02T16:34:48.038Z",
   "teams": [
     {
       "id": "stadtliga-malchower",
@@ -23,7 +23,7 @@
             "team1": 3,
             "team2": 1,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-02T15:20:57.156Z"
+            "recordedAt": "2026-11-02T16:34:48.038Z"
           }
         },
         {
@@ -39,7 +39,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-02T15:20:57.156Z"
+            "recordedAt": "2026-11-02T16:34:48.038Z"
           }
         },
         {
@@ -185,7 +185,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-02T15:20:57.156Z"
+            "recordedAt": "2026-11-02T16:34:48.038Z"
           }
         },
         {
@@ -201,7 +201,7 @@
             "team1": 3,
             "team2": 0,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-02T15:20:57.156Z"
+            "recordedAt": "2026-11-02T16:34:48.038Z"
           }
         },
         {
@@ -217,7 +217,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-02T15:20:57.156Z"
+            "recordedAt": "2026-11-02T16:34:48.038Z"
           }
         },
         {
