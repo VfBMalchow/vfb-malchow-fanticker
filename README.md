@@ -46,3 +46,7 @@ Auf der Startseite werden Spiele anhand des deutschen Kalenderdatums ab sieben T
 Bei der lokalen Node-Serverprüfung am 02.11.2026 hat die Quelle eine Browser-Schutzseite ausgeliefert. Ein Standardabruf mit Python urllib konnte denselben öffentlichen Plan lesen. Ob Vercel den Plan abrufen kann, muss nach Veröffentlichung geprüft werden. Der Aktualisieren-Button zeigt einen Quellfehler sichtbar an und lässt den importierten Stand stehen. Es werden keine Browserprüfungen automatisiert umgangen. Nach Quellfehlern wartet die Serverinstanz mindestens 60 Sekunden vor dem nächsten Versuch.
 
 Als lokaler Import ist `python scripts/import-stadtliga.py` vorbereitet. Er liest den öffentlichen Plan und aktualisiert ausschließlich die beiden Stadtliga-Teams in den JSON-Dateien. Danach Änderungen committen und pushen. Falls auch dieser Abruf eine Schutzseite liefert, bricht er ohne Datenänderung ab.
+
+Ein Dateiimport ohne Coding-Plattform ist per Doppelklick auf `Stadtliga-Datei-importieren.cmd` möglich. Vollständige Saison-PDFs oder gespeicherte HTML-Druckansichten werden unterstützt. Die Anleitung steht in `STADTLIGA-IMPORT.md`.
+
+Die Startseite trennt VMV und Stadtliga in eigene Bereiche. Der nächste offene Spieltermin bestimmt die Reihenfolge; ein laufendes VMV-Spiel erhält Vorrang. Beendete Spiele bestimmen die Reihenfolge nicht.

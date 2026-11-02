@@ -16,7 +16,7 @@ function render(){
  $('#schedule-content').innerHTML=html+`<div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates)}</div>`;
  return;
  }
- if(team.source==='stadtliga')html+=`<div class="city-notice"><div><strong>Kein Live-Ticker</strong><p>Ergebnisse erscheinen erst nach Eintragung auf <a href="https://www.meinspielplan.de/plan/zshcwv" target="_blank" rel="noopener">meinspielplan.de</a>. Ein Abruf beim Öffnen; danach bei Bedarf manuell. Gemeinsamer Kurzzeit-Cache: bis zu 60 Sekunden.</p><small>${cityError?'Quelle aktuell nicht abrufbar · gespeicherter Stand':cityUpdated?'Stand: '+esc(cityTime(cityUpdated)):'Gespeicherter Spielplan · Stand 02.11.2026'}</small></div><button id="city-refresh" ${cityBusy?'disabled':''}>↻ Aktualisieren</button></div>`;
+ if(team.source==='stadtliga')html+=`<div class="city-notice"><div><strong>Kein Live-Ticker</strong><p>Ergebnisse erscheinen erst nach Eintragung auf <a href="https://www.meinspielplan.de/plan/zshcwv" target="_blank" rel="noopener">meinspielplan.de</a>.</p><small>${cityError?'Gespeicherter Spielplan'+(cityUpdated?' · Stand: '+esc(cityTime(cityUpdated)):' · Stand 02.11.2026'):cityUpdated?'Stand: '+esc(cityTime(cityUpdated)):'Gespeicherter Spielplan · Stand 02.11.2026'}</small></div><button id="city-refresh" ${cityBusy?'disabled':''}>↻ Aktualisieren</button></div>`;
  const dates=[...new Set(team.matches.map(m=>m.date))].sort();
  for(const date of dates){const games=team.matches.filter(m=>m.date===date),past=date<new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin'}).format(new Date());
  html+=`<article class="schedule-day"><div class="schedule-day-head"><h3>${esc(day(date))}</h3><span>${esc(games[0].round)}</span></div>`;
