@@ -50,3 +50,10 @@ Als lokaler Import ist `python scripts/import-stadtliga.py` vorbereitet. Er lies
 Ein Dateiimport ohne Coding-Plattform ist per Doppelklick auf `Stadtliga-Datei-importieren.cmd` möglich. Vollständige Saison-PDFs oder gespeicherte HTML-Druckansichten werden unterstützt. Die Anleitung steht in `STADTLIGA-IMPORT.md`.
 
 Die Startseite trennt VMV und Stadtliga in eigene Bereiche. Der nächste offene Spieltermin bestimmt die Reihenfolge; ein laufendes VMV-Spiel erhält Vorrang. Beendete Spiele bestimmen die Reihenfolge nicht.
+
+## Aufrufe heute
+Vercel Production benötigt `UPSTASH_REDIS_REST_URL` und `UPSTASH_REDIS_REST_TOKEN` (Redis REST Token mit Schreibrechten). Keine Zugangsdaten ins Repository. Der Zähler auf Start- und Spielplanseite zählt einmal pro vollständigem Dokumentaufruf. Spielstandabfragen, Mitternachtsanzeige und interne SPA-Wechsel zählen nicht. Stream-Overlays werden nicht gezählt. Mehrfachaufrufe zählen mit; Bots können den öffentlich erreichbaren Endpunkt ebenfalls auslösen. Kein Personen-/Unique-Besucherzähler.
+
+Der Schlüssel `fanticker:pageviews:YYYY-MM-DD` richtet sich nach Europe/Berlin. INCR und Ablaufzeit werden über `/multi-exec` atomar ausgeführt. Alte Tageswerte verfallen nach zwei Tagen; keine IPs, Browserkennungen oder Cookies werden vom Zähler gespeichert. Pro Seitenaufruf fallen zwei Redis-Befehle an. Ohne Zähler-Polling im 15-Sekunden-Takt. Bei Konfigurationsfehlern, ausgeschöpftem Kontingent oder Ausfall wird der Zähler verborgen. GET `/api/views` liest ohne Erhöhung; POST mit passendem Origin erhöht. Der aktuelle Wert bleibt bis zum erneuten Seitenaufruf stehen; an Mitternacht wird nur gelesen.
+
+Nach Commit/Push und Vercel-Deployment GET `/api/views` prüfen: 200 bedeutet Verbindung in Ordnung, 503 `counter_not_configured` fehlende/falsche URL/Variablen, 503 `counter_unavailable` z.B. Token-/Upstash-Fehler. Beim Test keine Tokens ausgeben. Lokal werden Vercel-Variablen nicht automatisch übernommen.
