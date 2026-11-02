@@ -1,14 +1,12 @@
-# Stadtliga ohne Coding-Plattform aktualisieren
+# Stadtliga direkt online aktualisieren
 
-1. Den aktuellen Mannschaftsspielplan auf meinspielplan.de als PDF speichern. Bitte den vollständigen Saisonplan mit allen 13 Spielen verwenden. Alternativ die vollständige HTML-Druckansicht speichern.
-2. Im Repository-Ordner die Datei **Stadtliga-Datei-importieren.cmd** doppelklicken.
-3. Eine oder beide aktuellen Mannschafts-PDFs auswählen. Für jede Mannschaft nur eine Datei auswählen.
-4. Die Import-Zusammenfassung kontrollieren und bestätigen. Der Import ersetzt nur die ausgewählten Stadtliga-Mannschaften; die übrigen Spielpläne bleiben erhalten.
-5. GitHub Desktop öffnen, die Änderungen prüfen, einen Commit erstellen und **Push origin** anklicken. Nach der Vercel-Veröffentlichung sind die Daten für alle sichtbar.
+## Einmalige Einrichtung
+Beim ersten Start der Desktop-Verknüpfung **Fan-Ticker - Stadtliga aktualisieren** die REST URL und den normalen REST Token aus der vorhandenen Upstash-Datenbank eingeben. Dieselben Werte sind in Vercel hinterlegt. Keine Werte hier oder in GitHub-Dateien veröffentlichen. Die lokalen Zugangsdaten werden mit Windows DPAPI für dein Windows-Benutzerkonto verschlüsselt unter `%LOCALAPPDATA%/VfB-FanTicker/upstash.bin` gespeichert. Über **Upstash-Zugang ändern** kannst du sie ersetzen.
 
-Ohne Push bleibt die Änderung nur auf deinem Rechner. Es ist kein neuer Dienst nötig. Der Import nutzt auf diesem Rechner die bereits vorhandene Python-Laufzeit mit PDF-Unterstützung und Node.js. Die Dateien `public/spielplan.json` und `public/stadtliga.json` werden aktualisiert. PDFs selbst werden nicht ins Repository kopiert.
+## Normaler Abruf
+Verknüpfung doppelklicken. Die Daten werden aus dem öffentlichen Plan gelesen, lokal gesichert und direkt in Upstash gespeichert. Nach erfolgreicher Speicherung sind sie innerhalb von etwa 60 Sekunden beim nächsten Laden der Website verfügbar. **Für Ergebnisaktualisierungen ist kein Commit oder Push mehr erforderlich.** Bei einem Fehler wird der bisherige Online-Stand nicht gelöscht.
 
-Bei unvollständigen PDFs, unbekanntem Tabellenaufbau oder abweichenden Paarungen bricht der Import ab. Dann bitte die aktuelle vollständige HTML-Druckansicht verwenden oder den Import anpassen lassen. Über GitHub Desktop lassen sich importierte Änderungen vor dem Commit wieder verwerfen.
+## PDF-/HTML-Import
+Falls der normale Abruf nicht funktioniert: vollständigen aktuellen Saisonplan der Mannschaft mit allen 13 Spielen als PDF oder die vollständige HTML-Druckansicht speichern. **Stadtliga-Datei-importieren.cmd** doppelklicken, Dateien auswählen, Zusammenfassung prüfen und bestätigen. Der geprüfte Stand wird ebenfalls in Upstash gespeichert. Lokale JSON-Dateien dienen als Sicherung; ihre Veröffentlichung ist für die Online-Anzeige nicht erforderlich. Bei unvollständigen oder unbekannten Dateien bricht der Import ab.
 
-## Einmaliger Abruf per Desktop-Verknüpfung
-Auf diesem Rechner startet die Verknüpfung **Fan-Ticker - Stadtliga aktualisieren** einen einmaligen Abruf. Ein kleines Fenster zeigt Fortschritt und Ergebnis. Danach das Fenster schließen und die Änderungen in GitHub Desktop committen und pushen. Es läuft kein dauerhafter Dienst. Falls die Quelle den lokalen Abruf ebenfalls verweigert, bleibt der PDF-/HTML-Import als Alternative bestehen.
+Nach lokalem Programmstart, Dateiimport oder Einrichtung werden keine Zugangsdaten automatisch zu GitHub übertragen. Einmalige Codeänderungen müssen weiterhin veröffentlicht werden; nur die späteren Ergebnisupdates erfolgen ohne Commit/Push.

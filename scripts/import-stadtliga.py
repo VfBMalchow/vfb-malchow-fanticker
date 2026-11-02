@@ -1,6 +1,7 @@
 """Lokaler Stadtliga-Abruf ohne Hintergrunddienst. Danach committen und pushen."""
 from pathlib import Path
 import os,shutil,subprocess,urllib.request
+from stadtliga_credentials import get_env
 
 def run_import():
     root=Path(__file__).resolve().parent
@@ -13,9 +14,9 @@ def run_import():
         candidate=Path.home()/'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe'
         if candidate.exists():node=str(candidate)
     if not node:raise RuntimeError('Node.js wurde auf diesem Rechner nicht gefunden.')
-    result=subprocess.run([node,str(root/'import-stadtliga.mjs')],input=html,capture_output=True,timeout=45,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
+    result=subprocess.run([node,str(root/'import-stadtliga.mjs')],input=html,capture_output=True,timeout=45,env=get_env(),creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
     if result.returncode:
-        raise RuntimeError('Die Quelle hat keinen vollständigen, lesbaren Saisonplan geliefert. Der gespeicherte Stand bleibt erhalten. Du kannst alternativ einen aktuellen PDF-Spielplan über Stadtliga-Datei-importieren.cmd einlesen.')
+        raise RuntimeError('Abruf oder Online-Speicherung fehlgeschlagen. Der Online-Stand wurde nicht bestätigt. Bitte den Upstash-Zugang prüfen oder später erneut versuchen. Eine lokale Sicherung kann bereits aktualisiert worden sein.')
     return result.stdout.decode('utf-8',errors='replace').strip()
 
 if __name__=='__main__':print(run_import())

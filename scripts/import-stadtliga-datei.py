@@ -2,6 +2,7 @@
 from pathlib import Path
 import json,re,subprocess,sys,unicodedata
 from datetime import datetime,timezone
+from stadtliga_credentials import get_env,configure
 ROOT=Path(__file__).resolve().parent.parent
 MONTHS={'Jan':1,'Feb':2,'Mär':3,'Mrz':3,'Apr':4,'Mai':5,'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Okt':10,'Nov':11,'Dez':12}
 def normal(s):return re.sub(r'[^a-z0-9äöüß]','',unicodedata.normalize('NFKC',s).lower())
@@ -76,18 +77,21 @@ def run():
   if gui:
    from tkinter import messagebox
    if not messagebox.askyesno('Import prüfen',summary+'\n\nDie gespeicherten Termine und Ergebnisse dieser Teams werden durch die ausgewählten Dateien ersetzt. Wirklich übernehmen?'):return
+  if gui and not configure(gui):return
+  upload_env=get_env()
   # Complete validation before writing either file; files remain recoverable through Git.
   for i,t in enumerate(schedule['teams']):
    if t['id'] in updates:schedule['teams'][i]=updates[t['id']]
   city={'season':'2026/27','source':'https://www.meinspielplan.de/plan/zshcwv','fetchedAt':datetime.now(timezone.utc).isoformat(),'teams':[t for t in schedule['teams'] if t.get('source')=='stadtliga']}
   file.write_text(json.dumps(schedule,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
   (ROOT/'public/stadtliga.json').write_text(json.dumps(city,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-  if gui:messagebox.showinfo('Import erfolgreich',summary+'\n\nJetzt GitHub Desktop öffnen, Änderungen prüfen, committen und pushen. Erst danach sind sie online sichtbar.')
-  else:print(summary+'\nImport gespeichert. Jetzt committen und pushen.')
+  subprocess.run(['node',str(ROOT/'scripts/publish-city.mjs')],env=upload_env,check=True,capture_output=True)
+  if gui:messagebox.showinfo('Import erfolgreich',summary+'\n\nOnline gespeichert. Die Website übernimmt den neuen Stand innerhalb von etwa 60 Sekunden. Kein Commit oder Push nötig.')
+  else:print(summary+'\nOnline gespeichert. Kein Commit oder Push nötig.')
  except Exception as error:
   if gui:
    from tkinter import messagebox
-   messagebox.showerror('Import abgebrochen',str(error)+'\n\nEs wurden keine neuen Spieldaten übernommen.')
+   messagebox.showerror('Import abgebrochen',str(error)+'\n\nDie Online-Speicherung wurde nicht bestätigt. Eine lokale Sicherung kann bereits aktualisiert worden sein. Bitte Zugang prüfen und erneut versuchen.')
   else:raise
  finally:
   if gui:gui.destroy()
