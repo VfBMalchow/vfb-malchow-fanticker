@@ -1,6 +1,7 @@
 import {mergeResults} from './spielplan-model.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let schedule,live={},loading=false;
+const venueTown=venue=>venue?.match(/\b\d{5}\s+([^)]*)/)?.[1]?.trim()||'noch offen';
 const day=d=>new Intl.DateTimeFormat('de-DE',{weekday:'long',day:'2-digit',month:'long',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(d+'T12:00:00+01:00'));
 function render(){
  const requested=new URLSearchParams(location.search).get('team'),team=schedule.teams.find(t=>t.id===requested)||schedule.teams[0];
@@ -10,10 +11,10 @@ function render(){
  for(const date of dates){const games=team.matches.filter(m=>m.date===date),past=date<new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin'}).format(new Date());
  html+=`<article class="schedule-day"><div class="schedule-day-head"><h3>${esc(day(date))}</h3><span>${esc(games[0].round)}</span></div>`;
  for(const m of games){
- if(!m.team1){html+=`<div class="youth-fixture"><p>Spielort: ${esc(m.venue||'noch offen')} · Beginn: ${esc(m.time||'noch offen')}</p><p>Gegner und Ansetzungen werden ergänzt.</p></div>`;continue;}
+ if(!m.team1){html+=`<div class="youth-fixture"><p>Spielort: ${esc(venueTown(m.venue))} · Beginn: ${esc(m.time||'noch offen')}</p><p>Gegner und Ansetzungen werden ergänzt.</p></div>`;continue;}
  const result=m.result,st=live[m.id],home=/^Sporthalle\s+Malchow\b/i.test(m.venue||'');
  const name=(n,first)=>`<span class="schedule-team ${result&&(first?result.team1>result.team2:result.team2>result.team1)?'winner-team':''}">${n===team.name?'<strong>'+esc(n)+'</strong>':esc(n)}${result&&(first?result.team1>result.team2:result.team2>result.team1)?'<span class="winner-label">Sieger</span>':''}</span>`;
- html+=`<div class="schedule-fixture"><div class="schedule-time">${esc(m.time||'Offen')}<small>${m.time?'Uhr':''}</small></div><div class="schedule-opponents">${name(m.team1,true)}${name(m.team2,false)}<p class="venue">${home?'<span class="result-recorded">Heimspiel</span>':esc(m.venue||'Spielort noch offen')}</p></div><div class="schedule-result">${result?`<strong>${result.team1} : ${result.team2}</strong><span class="result-recorded">✓ Ergebnis erfasst</span>`:st?`<a href="./?match=${encodeURIComponent(st.id)}"><span class="badge live">● LIVE</span><small>Zum Ticker →</small></a>`:`<span class="badge">${past?'Ergebnis offen':'Angesetzt'}</span>`}</div></div>`;
+ html+=`<div class="schedule-fixture"><div class="schedule-time">${esc(m.time||'Offen')}<small>${m.time?'Uhr':''}</small></div><div class="schedule-opponents">${name(m.team1,true)}${name(m.team2,false)}<p class="venue">${home?'<span class="result-recorded">Heimspiel</span>':'Spielort: '+esc(venueTown(m.venue))}</p></div><div class="schedule-result">${result?`<strong>${result.team1} : ${result.team2}</strong><span class="result-recorded">✓ Ergebnis erfasst</span>`:st?`<a href="./?match=${encodeURIComponent(st.id)}"><span class="badge live">● LIVE</span><small>Zum Ticker →</small></a>`:`<span class="badge">${past?'Ergebnis offen':'Angesetzt'}</span>`}</div></div>`;
  }html+='</article>';
  }
  if(team.id.startsWith('u16'))html+='<p class="schedule-note">U16 männlich und weiblich spielen an denselben Terminen, an unterschiedlichen Spielorten.</p>';
