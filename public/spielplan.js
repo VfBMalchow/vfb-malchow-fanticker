@@ -8,7 +8,7 @@ const day=d=>new Intl.DateTimeFormat('de-DE',{weekday:'long',day:'2-digit',month
 function render(){
  const requested=new URLSearchParams(location.search).get('team'),team=schedule.teams.find(t=>t.id===requested)||schedule.teams[0];
  $('#schedule-sync').hidden=team.source==='stadtliga';
- $('#team-picker').innerHTML=schedule.teams.map(t=>`<a class="team-choice ${t.id===team.id?'selected':''}" ${t.id===team.id?'aria-current="page"':''} href="?team=${encodeURIComponent(t.id)}">${esc(t.label)}</a>`).join('');
+ $('#team-picker').innerHTML=schedule.teams.map(t=>`<a class="team-choice ${t.id===team.id?'selected':''}" ${t.id===team.id?'aria-current="page"':''} href="?team=${encodeURIComponent(t.id)}">${esc(t.label)}<small>${t.source==='stadtliga'?'Stadtliga Waren':'VMV'}</small></a>`).join('');
  let html=`<div class="schedule-heading"><div><h2>${esc(team.label)}</h2><p>${esc(team.league)} · ${esc(schedule.season)}</p></div><span class="badge">${team.matches.length} ${team.id.startsWith('u16')?'Termine':'Spiele'}</span></div>`;
  if(team.tournaments){
  const previous=$('#schedule-content [data-youth-team]');
@@ -16,7 +16,7 @@ function render(){
  $('#schedule-content').innerHTML=html+`<div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates)}</div>`;
  return;
  }
- if(team.source==='stadtliga')html+=`<div class="city-notice"><div><strong>Kein Live-Ticker</strong><p>Ergebnisse erscheinen erst nach Eintragung auf <a href="https://www.meinspielplan.de/plan/zshcwv" target="_blank" rel="noopener">meinspielplan.de</a>.</p><small>${cityError?'Gespeicherter Spielplan'+(cityUpdated?' · Stand: '+esc(cityTime(cityUpdated)):' · Stand 02.11.2026'):cityUpdated?'Stand: '+esc(cityTime(cityUpdated)):'Gespeicherter Spielplan · Stand 02.11.2026'}</small></div><button id="city-refresh" ${cityBusy?'disabled':''}>↻ Aktualisieren</button></div>`;
+ if(team.source==='stadtliga')html+='<p class="schedule-note">Die Stadtliga-Ergebnisse werden manuell gepflegt.</p>';
  const dates=[...new Set(team.matches.map(m=>m.date))].sort();
  for(const date of dates){const games=team.matches.filter(m=>m.date===date),past=date<new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin'}).format(new Date());
  html+=`<article class="schedule-day"><div class="schedule-day-head"><h3>${esc(day(date))}</h3><span>${esc(games[0].round)}</span></div>`;
