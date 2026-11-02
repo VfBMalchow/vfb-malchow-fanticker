@@ -25,3 +25,11 @@ Vercel → Projekt → Settings → Domains → `ticker.vfb-malchow.de` hinzufü
 Node.js 22. `npm run dev` → http://127.0.0.1:8780. `npm test` prüft abgeschlossene Spiele, Datenfilter und Ausfälle. `npm run build` prüft Dateien und JavaScript-Syntax. Keine npm-Abhängigkeiten erforderlich.
 
 Die Vercel-API ruft SAMS serverseitig auf. `/api/logo` erlaubt nur HTTPS-Bilder aus Uploadpfaden auf SAMS-Servern und ist kein allgemeiner Proxy.
+
+
+## Vereins-Spielpläne
+`public/spielplan.json` enthält nur Vereinsansetzungen und Ergebnisse (CSV-Import 02.11.2026). Die Spielplan-Seite ist unter `/spielplan.html` erreichbar. U16-Spielorte und Uhrzeiten sind noch offen.
+
+Der Workflow „Spielplan-Ergebnisse abgleichen“ liest am Wochenende stündlich (07:17–22:17 UTC, Ausführungen können sich verzögern) unseren bestehenden `/api/games`-Endpunkt und speichert neue Endstände passender Spiele in `public/spielplan.json`. Neue Commits lösen regulär die Vercel-Veröffentlichung aus. Voraussetzung: GitHub Actions und Schreibrechte für den Workflow auf dem Standardbranch. Unter Actions lässt sich der Workflow auch manuell starten. Kein zusätzlicher Speicheranbieter erforderlich. Lokal: `node scripts/sync-results.mjs`.
+
+Die geöffnete Spielplan-Seite zeigt bereits aktuelle Endstände aus dem Live-Abgleich. Dauerhaft bleiben diese erst nach erfolgreichem Workflow-Lauf. Falls die Quelle ein Ergebnis zwischen zwei Läufen entfernt, muss es aus einem neuen CSV-Export ergänzt werden. „Ergebnis erfasst“ kennzeichnet einen vorhandenen Endstand, keine amtliche Prüfung. Ergebnisänderungen werden bei erneuter Bereitstellung übernommen.

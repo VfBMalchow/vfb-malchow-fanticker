@@ -1,0 +1,572 @@
+{
+  "season": "2026/27",
+  "importedAt": "2026-11-02",
+  "teams": [
+    {
+      "id": "maenner",
+      "label": "Landesliga Männer",
+      "name": "VfB Malchow",
+      "league": "Landesliga Männer West",
+      "matches": [
+        {
+          "id": "14109",
+          "date": "2026-09-19",
+          "time": "10:00",
+          "round": "Spieltag 1",
+          "team1": "VfB Malchow",
+          "team2": "ASV Grün-Weiß Wismar",
+          "venue": "Sporthalle Realschule Graal-Müritz (18181 Graal-Müritz)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14107",
+          "date": "2026-09-19",
+          "time": "14:00",
+          "round": "Spieltag 1",
+          "team1": "TSV Graal-Müritz",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Realschule Graal-Müritz (18181 Graal-Müritz)",
+          "result": {
+            "team1": 3,
+            "team2": 0,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14118",
+          "date": "2026-10-17",
+          "time": "12:00",
+          "round": "Spieltag 2",
+          "team1": "Team Klütz/Bad Kleinen",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Möllner Straße (18109 Rostock)",
+          "result": {
+            "team1": 3,
+            "team2": 2,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14117",
+          "date": "2026-10-17",
+          "time": "14:00",
+          "round": "Spieltag 2",
+          "team1": "SV Warnemünde 5",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Möllner Straße (18109 Rostock)",
+          "result": {
+            "team1": 1,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14121",
+          "date": "2026-10-31",
+          "time": "10:00",
+          "round": "Spieltag 3",
+          "team1": "Kühlungsborner VV 95",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14120",
+          "date": "2026-10-31",
+          "time": "14:00",
+          "round": "Spieltag 3",
+          "team1": "HSG Uni Rostock 3",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "14131",
+          "date": "2026-11-15",
+          "time": "12:00",
+          "round": "Spieltag 4",
+          "team1": "VfB Malchow",
+          "team2": "SC Kröpelin",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "14132",
+          "date": "2026-11-15",
+          "time": "14:00",
+          "round": "Spieltag 4",
+          "team1": "VfB Malchow",
+          "team2": "VC Sanitz 1",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "14144",
+          "date": "2026-11-28",
+          "time": "10:00",
+          "round": "Spieltag 5",
+          "team1": "VfB Malchow",
+          "team2": "SV Warnemünde 5",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "14143",
+          "date": "2026-11-28",
+          "time": "14:00",
+          "round": "Spieltag 5",
+          "team1": "VfB Malchow",
+          "team2": "TSV Graal-Müritz",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "14151",
+          "date": "2027-01-16",
+          "time": "10:00",
+          "round": "Spieltag 6",
+          "team1": "VfB Malchow",
+          "team2": "SC Kröpelin",
+          "venue": "Sporthalle der Hochschule Wismar (23966 Wismar)",
+          "result": null
+        },
+        {
+          "id": "14149",
+          "date": "2027-01-16",
+          "time": "14:00",
+          "round": "Spieltag 6",
+          "team1": "ASV Grün-Weiß Wismar",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle der Hochschule Wismar (23966 Wismar)",
+          "result": null
+        },
+        {
+          "id": "14161",
+          "date": "2027-03-20",
+          "time": "12:00",
+          "round": "Spieltag 7",
+          "team1": "VC Sanitz 1",
+          "team2": "VfB Malchow",
+          "venue": "Sporthalle Sanitz (18190 Sanitz)",
+          "result": null
+        },
+        {
+          "id": "14163",
+          "date": "2027-03-20",
+          "time": "14:00",
+          "round": "Spieltag 7",
+          "team1": "VfB Malchow",
+          "team2": "HSG Uni Rostock 3",
+          "venue": "Sporthalle Sanitz (18190 Sanitz)",
+          "result": null
+        },
+        {
+          "id": "14164",
+          "date": "2027-04-17",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "VfB Malchow",
+          "team2": "Team Klütz/Bad Kleinen",
+          "venue": "Zweifeldsporthalle Kröpelin (18236 Kröpelin)",
+          "result": null
+        },
+        {
+          "id": "14165",
+          "date": "2027-04-17",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "VfB Malchow",
+          "team2": "Kühlungsborner VV 95",
+          "venue": "Zweifeldsporthalle Kröpelin (18236 Kröpelin)",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "frauen-1",
+      "label": "Landesklasse Frauen 1",
+      "name": "VfB Malchow 1",
+      "league": "Landesklasse Frauen Mitte",
+      "matches": [
+        {
+          "id": "15305",
+          "date": "2026-09-19",
+          "time": "10:00",
+          "round": "Spieltag 1",
+          "team1": "VfB Malchow 1",
+          "team2": "PSV Rostock 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": {
+            "team1": 3,
+            "team2": 1,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15304",
+          "date": "2026-09-19",
+          "time": "12:00",
+          "round": "Spieltag 1",
+          "team1": "VfB Malchow 1",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": {
+            "team1": 3,
+            "team2": 2,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15314",
+          "date": "2026-11-01",
+          "time": "12:00",
+          "round": "Spieltag 3",
+          "team1": "HSG Uni Rostock 3",
+          "team2": "VfB Malchow 1",
+          "venue": "Sporthalle Mathias-Thesen-Straße 17 (18069 Rostock)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15312",
+          "date": "2026-11-01",
+          "time": "14:00",
+          "round": "Spieltag 3",
+          "team1": "SV Warnemünde 6",
+          "team2": "VfB Malchow 1",
+          "venue": "Sporthalle Mathias-Thesen-Straße 17 (18069 Rostock)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15323",
+          "date": "2026-11-29",
+          "time": "10:00",
+          "round": "Spieltag 5",
+          "team1": "VfB Malchow 1",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15321",
+          "date": "2026-11-29",
+          "time": "12:00",
+          "round": "Spieltag 5",
+          "team1": "SV Warnemünde 7",
+          "team2": "VfB Malchow 1",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15326",
+          "date": "2027-01-17",
+          "time": "10:00",
+          "round": "Spieltag 6",
+          "team1": "VfB Malchow 1",
+          "team2": "SV Hafen Rostock 2",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15324",
+          "date": "2027-01-17",
+          "time": "12:00",
+          "round": "Spieltag 6",
+          "team1": "SV Warnemünde 6",
+          "team2": "VfB Malchow 1",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15335",
+          "date": "2027-03-20",
+          "time": "10:00",
+          "round": "Spieltag 7",
+          "team1": "HSG Uni Rostock 3",
+          "team2": "VfB Malchow 1",
+          "venue": "",
+          "result": null
+        },
+        {
+          "id": "15334",
+          "date": "2027-03-20",
+          "time": "14:00",
+          "round": "Spieltag 7",
+          "team1": "SV Hafen Rostock 2",
+          "team2": "VfB Malchow 1",
+          "venue": "",
+          "result": null
+        },
+        {
+          "id": "15340",
+          "date": "2027-04-24",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "VfB Malchow 1",
+          "team2": "PSV Rostock 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15342",
+          "date": "2027-04-24",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "VfB Malchow 1",
+          "team2": "SV Warnemünde 7",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "frauen-2",
+      "label": "Landesklasse Frauen 2",
+      "name": "VfB Malchow 2",
+      "league": "Landesklasse Frauen Mitte",
+      "matches": [
+        {
+          "id": "15304",
+          "date": "2026-09-19",
+          "time": "12:00",
+          "round": "Spieltag 1",
+          "team1": "VfB Malchow 1",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": {
+            "team1": 3,
+            "team2": 2,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15306",
+          "date": "2026-09-19",
+          "time": "14:00",
+          "round": "Spieltag 1",
+          "team1": "PSV Rostock 2",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": {
+            "team1": 3,
+            "team2": 1,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15309",
+          "date": "2026-10-04",
+          "time": "10:00",
+          "round": "Spieltag 2",
+          "team1": "VfB Malchow 2",
+          "team2": "SV Warnemünde 7",
+          "venue": "Sporthalle an der Jägerbäk (18069 Rostock)",
+          "result": {
+            "team1": 1,
+            "team2": 3,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15307",
+          "date": "2026-10-04",
+          "time": "12:00",
+          "round": "Spieltag 2",
+          "team1": "SV Hafen Rostock 2",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle an der Jägerbäk (18069 Rostock)",
+          "result": {
+            "team1": 3,
+            "team2": 2,
+            "source": "CSV",
+            "recordedAt": "2026-11-02"
+          }
+        },
+        {
+          "id": "15315",
+          "date": "2026-11-15",
+          "time": "10:00",
+          "round": "Spieltag 4",
+          "team1": "VfB Malchow 2",
+          "team2": "SV Hafen Rostock 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15316",
+          "date": "2026-11-15",
+          "time": "12:00",
+          "round": "Spieltag 4",
+          "team1": "VfB Malchow 2",
+          "team2": "HSG Uni Rostock 3",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15323",
+          "date": "2026-11-29",
+          "time": "10:00",
+          "round": "Spieltag 5",
+          "team1": "VfB Malchow 1",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15322",
+          "date": "2026-11-29",
+          "time": "14:00",
+          "round": "Spieltag 5",
+          "team1": "SV Warnemünde 7",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Danziger Strasse (18109 Rostock)",
+          "result": null
+        },
+        {
+          "id": "15330",
+          "date": "2027-03-20",
+          "time": "10:00",
+          "round": "Spieltag 7",
+          "team1": "VfB Malchow 2",
+          "team2": "PSV Rostock 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15331",
+          "date": "2027-03-20",
+          "time": "12:00",
+          "round": "Spieltag 7",
+          "team1": "VfB Malchow 2",
+          "team2": "SV Warnemünde 6",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15337",
+          "date": "2027-04-24",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "HSG Uni Rostock 3",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        },
+        {
+          "id": "15338",
+          "date": "2027-04-24",
+          "time": "10:00",
+          "round": "Spieltag 8",
+          "team1": "SV Warnemünde 6",
+          "team2": "VfB Malchow 2",
+          "venue": "Sporthalle Malchow (17213 Malchow)",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "u16-m",
+      "label": "U16 männlich",
+      "name": "U16 männlich",
+      "league": "U16",
+      "matches": [
+        {
+          "id": "u16-m-0",
+          "date": "2026-09-06",
+          "time": null,
+          "round": "1. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-m-1",
+          "date": "2026-10-10",
+          "time": null,
+          "round": "2. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-m-2",
+          "date": "2026-11-21",
+          "time": null,
+          "round": "3. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-m-3",
+          "date": "2027-01-30",
+          "time": null,
+          "round": "Landesmeisterschaftsfinale",
+          "venue": null
+        }
+      ]
+    },
+    {
+      "id": "u16-w",
+      "label": "U16 weiblich",
+      "name": "U16 weiblich",
+      "league": "U16",
+      "matches": [
+        {
+          "id": "u16-w-0",
+          "date": "2026-09-06",
+          "time": null,
+          "round": "1. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-w-1",
+          "date": "2026-10-10",
+          "time": null,
+          "round": "2. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-w-2",
+          "date": "2026-11-21",
+          "time": null,
+          "round": "3. Vorrunde",
+          "venue": null
+        },
+        {
+          "id": "u16-w-3",
+          "date": "2027-01-30",
+          "time": null,
+          "round": "Landesmeisterschaftsfinale",
+          "venue": null
+        }
+      ]
+    }
+  ]
+}
