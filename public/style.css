@@ -31,3 +31,5 @@ footer{gap:24px;padding-top:24px}.ticker-notices{width:100%;padding:20px 22px;ba
 .title>p.schedule-scope{max-width:720px;font-size:12px;line-height:1.8;color:#61738a;margin-top:12px}
 
 .title>p.schedule-hint{font-size:13px;line-height:1.8;margin:16px 0 0}.schedule-hint a{color:var(--navy);font-weight:700;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:2px;text-underline-offset:4px}.schedule-hint a:hover{color:#527f15}
+
+.city-notice{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;margin-bottom:20px;border:1px solid #dce3ec;border-left:4px solid var(--green);border-radius:10px;background:#eef3e8}.city-notice p{font-size:12px;line-height:1.7;color:#61738a;margin:8px 0}.city-notice small{font-size:10px;color:#61738a}.city-notice a,.city-home a:not(.match){color:var(--navy)}.city-home{border-top:1px solid #dce3ec;margin-top:30px;padding-top:28px}.city-home .schedule-heading h2{font-size:20px}@media(max-width:600px){.city-notice{align-items:flex-start;flex-direction:column}.city-home .schedule-heading{align-items:flex-start}.city-home .schedule-heading h2{font-size:18px}}

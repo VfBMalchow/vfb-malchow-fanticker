@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {parseStadtliga,getStadtliga} from '../lib/stadtliga.js';
+import {upcomingCityMatches} from '../public/stadtliga-model.js';
+const row=(id,team,score='0 : 3')=>`<tr class="matchid_${id} match_date_2026-11-11 match_round_first_4"><td><span class="match_time">20:00</span></td><td>Sporthalle Malchow</td><td class="match_team1"><div class="team_name_inner">${team}</div></td><td>-</td><td class="match_team2"><div class="team_name_inner">Hobbyprits&shy;cher</div></td><td class="td_resultset">Sätze</td><td class="td_resultset">${score}</td></tr>`;
+const html='Stadtliga Waren Volleyball 2026/2027'+Array.from({length:13},(_,i)=>row(i,'Malchower Volleys')).join('')+Array.from({length:13},(_,i)=>row(i+20,'VfB Volleys','')).join('');
+test('Stadtliga-Parser liest beide Teams, Ergebnis, Ort und HTML-Silbentrennung',()=>{const d=parseStadtliga(html,'2026-11-02');assert.equal(d.teams.length,2);assert.equal(d.teams[0].matches.length,13);assert.equal(d.teams[0].matches[0].team2,'Hobbypritscher');assert.equal(d.teams[0].matches[0].city,'Malchow');assert.equal(d.teams[0].matches[0].result.team2,3);assert.equal(d.teams[1].matches[0].result,null);});
+test('Fehlerseiten und Teilpläne ersetzen keine vollständigen Daten',()=>{assert.throws(()=>parseStadtliga('Fehlerseite'));assert.throws(()=>parseStadtliga('Stadtliga Waren Volleyball 2026/2027'+row(1,'VfB Volleys')));});
+test('Startseite zeigt genau das Fenster von heute bis sieben Tage voraus',()=>{const teams=[{id:'city',name:'VfB Volleys',matches:['2026-11-01','2026-11-02','2026-11-09','2026-11-10'].map(date=>({id:date,date,time:'20:00'}))}];assert.deepEqual(upcomingCityMatches(teams,new Date('2026-11-02T12:00:00Z')).map(m=>m.date),['2026-11-02','2026-11-09']);});
+test('Vereinsderby wird auf der Startseite nur einmal gezeigt',()=>{const d=parseStadtliga(html);d.teams[1].matches=[...d.teams[0].matches];assert.equal(upcomingCityMatches(d.teams,new Date('2026-11-10')).length,13);});
+test('Quellfehler wird als fehlgeschlagene Aktualisierung gemeldet',async()=>{await assert.rejects(getStadtliga(async()=>({ok:false})));});

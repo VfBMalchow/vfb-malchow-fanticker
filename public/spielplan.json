@@ -805,6 +805,335 @@
           "timesReliable": true
         }
       ]
+    },
+    {
+      "id": "stadtliga-malchower",
+      "name": "Malchower Volleys",
+      "label": "Malchower Volleys",
+      "league": "Stadtliga Waren · Stadtliga 1",
+      "source": "stadtliga",
+      "matches": [
+        {
+          "id": "stadtliga-59600636",
+          "date": "2026-09-22",
+          "time": "20:00",
+          "round": "Spieltag 1",
+          "team1": "Malchower Volleys",
+          "team2": "Hobbypritscher",
+          "venue": "Sporthalle Malchow",
+          "city": "Malchow",
+          "result": {
+            "team1": 3,
+            "team2": 1,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-02T14:45:45.667Z"
+          }
+        },
+        {
+          "id": "stadtliga-59600567",
+          "date": "2026-10-08",
+          "time": "20:00",
+          "round": "Spieltag 2",
+          "team1": "Amtspiepen",
+          "team2": "Malchower Volleys",
+          "venue": "Sporthalle Gymnasium Waren",
+          "city": "Waren (Müritz)",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-02T14:45:45.667Z"
+          }
+        },
+        {
+          "id": "stadtliga-59600540",
+          "date": "2026-10-27",
+          "time": "19:45",
+          "round": "Spieltag 3",
+          "team1": "Malchower Volleys",
+          "team2": "Feuerw. 1A",
+          "venue": "Engelshalle Waren",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600616",
+          "date": "2026-11-11",
+          "time": "20:00",
+          "round": "Spieltag 4",
+          "team1": "Feuerwache 2",
+          "team2": "Malchower Volleys",
+          "venue": "Sporthalle Papenberg",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59845380",
+          "date": "2026-11-24",
+          "time": "19:45",
+          "round": "Spieltag 5",
+          "team1": "Malchower Volleys",
+          "team2": "Feuerwache 1 Alpha",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di. 20:00 Uhr",
+          "city": "Malchow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600564",
+          "date": "2026-12-08",
+          "time": "20:00",
+          "round": "Spieltag 6",
+          "team1": "A-Team Röbel",
+          "team2": "Malchower Volleys",
+          "venue": "Röbel Gildekamp, Di.20.00 Uhr",
+          "city": "Röbel",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600578",
+          "date": "2027-01-11",
+          "time": "19:30",
+          "round": "Spieltag 7",
+          "team1": "Malchower Volleys",
+          "team2": "Desp. HW",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600643",
+          "date": "2027-01-19",
+          "time": "19:00",
+          "round": "Spieltag 8",
+          "team1": "SKV Mixed",
+          "team2": "Malchower Volleys",
+          "venue": "Engelshalle, Di 19.00 Uhr",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600586",
+          "date": "2027-02-02",
+          "time": "20:00",
+          "round": "Spieltag 9",
+          "team1": "Malchower Volleys",
+          "team2": "Rechliner Volleyballverein",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di. 20:00 Uhr",
+          "city": "Malchow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59845389",
+          "date": "2027-02-23",
+          "time": "19:30",
+          "round": "Spieltag 10",
+          "team1": "Schloß Torgelow",
+          "team2": "Malchower Volleys",
+          "venue": "Schloss Torgelow 19:30",
+          "city": "Torgelow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600569",
+          "date": "2027-03-01",
+          "time": "20:00",
+          "round": "Spieltag 11",
+          "team1": "Feuerwache 1 Bravo",
+          "team2": "Malchower Volleys",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600601",
+          "date": "2027-03-16",
+          "time": "20:00",
+          "round": "Spieltag 12",
+          "team1": "Malchower Volleys",
+          "team2": "VfB Volleys",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di. 20:00 Uhr",
+          "city": "Malchow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600563",
+          "date": "2027-04-05",
+          "time": "20:00",
+          "round": "Spieltag 13",
+          "team1": "TSV 90 Röbel 1",
+          "team2": "Malchower Volleys",
+          "venue": "Röbel Mo.20:00 Uhr",
+          "city": "Röbel",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "stadtliga-vfb",
+      "name": "VfB Volleys",
+      "label": "VfB Volleys",
+      "league": "Stadtliga Waren · Stadtliga 2",
+      "source": "stadtliga",
+      "matches": [
+        {
+          "id": "stadtliga-59845371",
+          "date": "2026-09-15",
+          "time": "20:00",
+          "round": "Spieltag 1",
+          "team1": "VfB Volleys",
+          "team2": "Schloß Torgelow",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di.20.00 Uhr",
+          "city": "Malchow",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-02T14:45:45.667Z"
+          }
+        },
+        {
+          "id": "stadtliga-59600600",
+          "date": "2026-10-05",
+          "time": "20:00",
+          "round": "Spieltag 2",
+          "team1": "TSV 90 Röbel 1",
+          "team2": "VfB Volleys",
+          "venue": "Röbel Mo.20:00 Uhr",
+          "city": "Röbel",
+          "result": {
+            "team1": 3,
+            "team2": 0,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-02T14:45:45.667Z"
+          }
+        },
+        {
+          "id": "stadtliga-59600605",
+          "date": "2026-10-27",
+          "time": "20:00",
+          "round": "Spieltag 3",
+          "team1": "VfB Volleys",
+          "team2": "Hobbypritscher",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di.20.00 Uhr",
+          "city": "Malchow",
+          "result": {
+            "team1": 0,
+            "team2": 3,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-02T14:45:45.667Z"
+          }
+        },
+        {
+          "id": "stadtliga-59600603",
+          "date": "2026-11-12",
+          "time": "20:00",
+          "round": "Spieltag 4",
+          "team1": "Amtspiepen",
+          "team2": "VfB Volleys",
+          "venue": "Gymnasium Waren Do. 20:00 Uhr",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600543",
+          "date": "2026-11-23",
+          "time": "20:00",
+          "round": "Spieltag 5",
+          "team1": "VfB Volleys",
+          "team2": "Feuerw. 1A",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600619",
+          "date": "2026-12-09",
+          "time": "20:00",
+          "round": "Spieltag 6",
+          "team1": "Feuerwache 2",
+          "team2": "VfB Volleys",
+          "venue": "Realschule Papenberg Mi 20:00 Uhr",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59845384",
+          "date": "2027-01-11",
+          "time": "20:00",
+          "round": "Spieltag 7",
+          "team1": "VfB Volleys",
+          "team2": "Feuerwache 1 Alpha",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600559",
+          "date": "2027-01-19",
+          "time": "20:00",
+          "round": "Spieltag 8",
+          "team1": "A-Team Röbel",
+          "team2": "VfB Volleys",
+          "venue": "Röbel Gildekamp, Di.20.00 Uhr",
+          "city": "Röbel",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600579",
+          "date": "2027-02-01",
+          "time": "19:30",
+          "round": "Spieltag 9",
+          "team1": "VfB Volleys",
+          "team2": "Desp. HW",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600606",
+          "date": "2027-02-23",
+          "time": "18:30",
+          "round": "Spieltag 10",
+          "team1": "SKV Mixed",
+          "team2": "VfB Volleys",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600589",
+          "date": "2027-03-02",
+          "time": "19:30",
+          "round": "Spieltag 11",
+          "team1": "VfB Volleys",
+          "team2": "Rechliner Volleyballverein",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di.20.00 Uhr",
+          "city": "Malchow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600601",
+          "date": "2027-03-16",
+          "time": "20:00",
+          "round": "Spieltag 12",
+          "team1": "Malchower Volleys",
+          "team2": "VfB Volleys",
+          "venue": "Sporthalle Malchow (Zetkin Ring) Di. 20:00 Uhr",
+          "city": "Malchow",
+          "result": null
+        },
+        {
+          "id": "stadtliga-59600604",
+          "date": "2027-04-06",
+          "time": "20:30",
+          "round": "Spieltag 13",
+          "team1": "VfB Volleys",
+          "team2": "Feuerwache 1 Bravo",
+          "venue": "Sporthalle am Engelsplatz",
+          "city": "Waren (Müritz)",
+          "result": null
+        }
+      ]
     }
   ]
 }
