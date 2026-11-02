@@ -530,6 +530,139 @@
           "round": "Landesmeisterschaftsfinale",
           "venue": null
         }
+      ],
+      "tournaments": [
+        {
+          "team": "m",
+          "date": "06.09.2026",
+          "title": "1. Vorrunde",
+          "place": "Malchow",
+          "home": true,
+          "participants": 7,
+          "placement": "3. Platz",
+          "games": [
+            {
+              "phase": "Staffel B",
+              "opponent": "VC Greifswald I",
+              "own": 2,
+              "other": 0,
+              "sets": [
+                "25:23",
+                "27:25"
+              ],
+              "court": "3",
+              "round": "1",
+              "time": "10:00"
+            },
+            {
+              "phase": "Staffel B",
+              "opponent": "SV Warnemünde 1949 e.V.",
+              "own": 2,
+              "other": 1,
+              "sets": [
+                "19:25",
+                "25:22",
+                "15:7"
+              ],
+              "court": "3",
+              "round": "2",
+              "time": "11:00"
+            },
+            {
+              "phase": "Halbfinale",
+              "opponent": "PSV Neustrelitz e.V.",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "24:26",
+                "18:25"
+              ],
+              "court": "2",
+              "round": "4",
+              "time": "14:00"
+            },
+            {
+              "phase": "Spiel um Platz 3",
+              "opponent": "SV Warnemünde 1949 e.V.",
+              "own": 2,
+              "other": 1,
+              "sets": [
+                "25:21",
+                "18:25",
+                "15:7"
+              ],
+              "court": "1",
+              "round": "5",
+              "time": "15:00"
+            }
+          ],
+          "timesReliable": true
+        },
+        {
+          "team": "m",
+          "date": "10.10.2026",
+          "title": "2. Vorrunde",
+          "place": "Rostock",
+          "home": false,
+          "participants": 9,
+          "placement": "8. Platz",
+          "games": [
+            {
+              "phase": "Staffel C",
+              "opponent": "VC Greifswald II",
+              "own": 1,
+              "other": 2,
+              "sets": [
+                "25:20",
+                "16:25",
+                "12:15"
+              ],
+              "court": "3",
+              "round": "1",
+              "time": "10:00"
+            },
+            {
+              "phase": "Staffel C",
+              "opponent": "SV Warnemünde 1949 e.V.",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "19:25",
+                "13:25"
+              ],
+              "court": "3",
+              "round": "3",
+              "time": "10:00"
+            },
+            {
+              "phase": "Platz 7-9",
+              "opponent": "Kühlungsborner VV ´95",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "21:25",
+                "13:25"
+              ],
+              "court": "1",
+              "round": "4",
+              "time": "10:00"
+            },
+            {
+              "phase": "Platz 7-9",
+              "opponent": "1. VC Stralsund",
+              "own": 2,
+              "other": 0,
+              "sets": [
+                "25:13",
+                "25:22"
+              ],
+              "court": "1",
+              "round": "5",
+              "time": "10:00"
+            }
+          ],
+          "timesReliable": false
+        }
       ]
     },
     {
@@ -565,6 +698,111 @@
           "time": null,
           "round": "Landesmeisterschaftsfinale",
           "venue": null
+        }
+      ],
+      "tournaments": [
+        {
+          "team": "w",
+          "date": "06.09.2026",
+          "title": "1. Vorrunde",
+          "place": "Stralendorf",
+          "home": false,
+          "participants": 6,
+          "placement": "6. Platz",
+          "games": [
+            {
+              "phase": "Staffel B",
+              "opponent": "1. VC Parchim",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "8:25",
+                "4:25"
+              ],
+              "court": "2",
+              "round": "1",
+              "time": "10:00"
+            },
+            {
+              "phase": "Staffel B",
+              "opponent": "Schweriner SC II",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "2:25",
+                "6:25"
+              ],
+              "court": "2",
+              "round": "2",
+              "time": "11:00"
+            },
+            {
+              "phase": "Platz 5/6",
+              "opponent": "PSV Rostock",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "14:25",
+                "20:25"
+              ],
+              "court": "1",
+              "round": "5",
+              "time": "14:00"
+            }
+          ],
+          "timesReliable": true
+        },
+        {
+          "team": "w",
+          "date": "10.10.2026",
+          "title": "2. Vorrunde",
+          "place": "Stralsund",
+          "home": false,
+          "participants": 6,
+          "placement": "5. Platz",
+          "games": [
+            {
+              "phase": "Staffel A",
+              "opponent": "1. VC Stralsund II",
+              "own": 0,
+              "other": 2,
+              "sets": [
+                "17:25",
+                "16:25"
+              ],
+              "court": "1",
+              "round": "1",
+              "time": "10:00"
+            },
+            {
+              "phase": "Staffel A",
+              "opponent": "HSG Uni Rostock II",
+              "own": 1,
+              "other": 2,
+              "sets": [
+                "17:25",
+                "28:26",
+                "11:15"
+              ],
+              "court": "1",
+              "round": "2",
+              "time": "11:00"
+            },
+            {
+              "phase": "Platz 5/6",
+              "opponent": "SG Empor Sassnitz",
+              "own": 2,
+              "other": 0,
+              "sets": [
+                "25:10",
+                "25:19"
+              ],
+              "court": "1",
+              "round": "5",
+              "time": "14:30"
+            }
+          ],
+          "timesReliable": true
         }
       ]
     }

@@ -13,3 +13,12 @@ export function mergeResults(schedule,data,now=new Date().toISOString()){
  f.result={team1:a,team2:b,source:'VMV/SAMS',recordedAt:now};changed++;
  }}return changed;
 }
+
+export function availableTickers(schedule,data){
+ const links={};
+ for(const day of data.matchDays||[])for(const m of day.matches||[]){
+ const s=data.matchStates?.[m.id]||{};
+ for(const t of schedule.teams)for(const f of t.matches){
+ if(f.team1===m.teamDescription1&&f.team2===m.teamDescription2&&f.date===dateKey(m.date))links[f.id]={id:m.id,status:s.finished||s.finalized?'done':s.started?'live':'upcoming'};
+ }}return links;
+}
