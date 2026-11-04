@@ -7,9 +7,9 @@ export function makeCalendar(team,matches=team.matches,now=new Date()){
  for(const m of matches){
  const timed=/^\d{2}:\d{2}$/.test(m.time||'');
  lines.push('BEGIN:VEVENT','UID:'+escapeText(team.id+'-'+m.id)+'@ticker.vfb-malchow.de','DTSTAMP:'+stamp(now));
- if(timed)lines.push('DTSTART:'+stamp(cityTimestamp(m)));
+ if(timed){const start=cityTimestamp(m);lines.push('DTSTART:'+stamp(start),'DTEND:'+stamp(start+2*60*60*1000));}
  else{const next=new Date(m.date+'T12:00:00Z');next.setUTCDate(next.getUTCDate()+1);lines.push('DTSTART;VALUE=DATE:'+m.date.replaceAll('-',''),'DTEND;VALUE=DATE:'+next.toISOString().slice(0,10).replaceAll('-',''));}
- lines.push('SUMMARY:'+escapeText(m.team1?m.team1+' – '+m.team2:team.label+' · '+m.round),'LOCATION:'+escapeText(m.city||m.venue||'Spielort noch offen'),'DESCRIPTION:'+escapeText((timed?'Spielende offen.':'Beginn noch offen.')+' Änderungen möglich. Aktueller Spielplan: https://ticker.vfb-malchow.de/spielplan.html?team='+encodeURIComponent(team.id)),'URL:https://ticker.vfb-malchow.de/spielplan.html?team='+encodeURIComponent(team.id),'END:VEVENT');
+ lines.push('SUMMARY:'+escapeText(m.team1?m.team1+' – '+m.team2:team.label+' · '+m.round),'LOCATION:'+escapeText(m.city||m.venue||'Spielort noch offen'),'DESCRIPTION:'+escapeText((timed?'Geplante Dauer: 2 Stunden.':'Beginn noch offen.')+' Änderungen möglich. Aktueller Spielplan: https://ticker.vfb-malchow.de/spielplan.html?team='+encodeURIComponent(team.id)),'URL:https://ticker.vfb-malchow.de/spielplan.html?team='+encodeURIComponent(team.id),'END:VEVENT');
  }
  return [...lines,'END:VCALENDAR'].map(fold).join('\r\n')+'\r\n';
 }
