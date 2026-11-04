@@ -1,4 +1,4 @@
-import {downloadCalendar} from './calendar.js';
+import {openCalendarPicker} from './calendar-picker.js';
 import {fetchCity,cityTime} from './stadtliga-client.js';
 import {renderTournaments} from './tournaments.js';
 import {mergeResults,availableTickers} from './spielplan-model.js';
@@ -14,7 +14,7 @@ function render(){
  if(team.tournaments){
  const previous=$('#schedule-content [data-youth-team]');
  const openDates=previous?.dataset.youthTeam===team.id?new Set([...previous.querySelectorAll('details[open]')].map(d=>d.dataset.date)):null;
- $('#schedule-content').innerHTML=html+`<div class="calendar-youth">${team.matches.map(m=>`<button class="calendar-single" data-calendar="${esc(m.id)}">${esc(day(m.date))} · Kalender ↓</button>`).join('')}</div><div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates)}</div>`;
+ $('#schedule-content').innerHTML=html+`<div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates)}</div>`;
  return;
  }
  if(team.source==='stadtliga')html+='<p class="schedule-note">Die Stadtliga-Ergebnisse werden manuell gepflegt.</p>';
@@ -22,10 +22,10 @@ function render(){
  for(const date of dates){const games=team.matches.filter(m=>m.date===date),past=date<new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin'}).format(new Date());
  html+=`<article class="schedule-day"><div class="schedule-day-head"><h3>${esc(day(date))}</h3><span>${esc(games[0].round)}</span></div>`;
  for(const m of games){
- if(!m.team1){html+=`<div class="youth-fixture"><button class="calendar-single" data-calendar="${esc(m.id)}">Termin im Kalender speichern ↓</button><p>Spielort: ${esc(venueTown(m.venue))} · Beginn: ${esc(m.time||'noch offen')}</p><p>Gegner und Ansetzungen werden ergänzt.</p></div>`;continue;}
+ if(!m.team1){html+=`<div class="youth-fixture"><p>Spielort: ${esc(venueTown(m.venue))} · Beginn: ${esc(m.time||'noch offen')}</p><p>Gegner und Ansetzungen werden ergänzt.</p></div>`;continue;}
  const result=m.result,st=live[m.id],home=/^Sporthalle\s+Malchow\b/i.test(m.venue||'');
  const name=(n,first)=>`<span class="schedule-team ${result&&(first?result.team1>result.team2:result.team2>result.team1)?'winner-team':''}">${n===team.name?'<strong>'+esc(n)+'</strong>':esc(n)}${result&&(first?result.team1>result.team2:result.team2>result.team1)?'<span class="winner-label">Sieger</span>':''}</span>`;
- html+=`<div class="schedule-fixture"><div class="schedule-time"><button class="calendar-single" data-calendar="${esc(m.id)}" title="Dieses Spiel im Kalender speichern">Kalender ↓</button>${esc(m.time||'Offen')}<small>${m.time?'Uhr':''}</small></div><div class="schedule-opponents">${name(m.team1,true)}${name(m.team2,false)}<p class="venue">${home?'<span class="result-recorded">Heimspiel</span>':'Spielort: '+esc(team.source==='stadtliga'?(m.city||'noch offen'):venueTown(m.venue))}</p></div><div class="schedule-result">${result?`<strong>${result.team1} : ${result.team2}</strong><span class="result-recorded">✓ Ergebnis erfasst</span>${st?`<a href="./?match=${encodeURIComponent(st.id)}"><small>Zum Ticker →</small></a>`:''}`:st?`<a href="./?match=${encodeURIComponent(st.id)}"><span class="badge ${st.status==='live'?'live':''}">${st.status==='live'?'● LIVE':st.status==='done'?'Beendet':'Angesetzt'}</span><small>Zum Ticker →</small></a>`:`<span class="badge">${past?'Ergebnis offen':'Angesetzt'}</span>`}</div></div>`;
+ html+=`<div class="schedule-fixture"><div class="schedule-time">${esc(m.time||'Offen')}<small>${m.time?'Uhr':''}</small></div><div class="schedule-opponents">${name(m.team1,true)}${name(m.team2,false)}<p class="venue">${home?'<span class="result-recorded">Heimspiel</span>':'Spielort: '+esc(team.source==='stadtliga'?(m.city||'noch offen'):venueTown(m.venue))}</p></div><div class="schedule-result">${result?`<strong>${result.team1} : ${result.team2}</strong><span class="result-recorded">✓ Ergebnis erfasst</span>${st?`<a href="./?match=${encodeURIComponent(st.id)}"><small>Zum Ticker →</small></a>`:''}`:st?`<a href="./?match=${encodeURIComponent(st.id)}"><span class="badge ${st.status==='live'?'live':''}">${st.status==='live'?'● LIVE':st.status==='done'?'Beendet':'Angesetzt'}</span><small>Zum Ticker →</small></a>`:`<span class="badge">${past?'Ergebnis offen':'Angesetzt'}</span>`}</div></div>`;
  }html+='</article>';
  }
  if(team.id.startsWith('u16'))html+='<p class="schedule-note">U16 männlich und weiblich spielen an denselben Terminen, an unterschiedlichen Spielorten.</p>';
@@ -42,4 +42,4 @@ $('#share').onclick=async()=>{try{if(navigator.share)await navigator.share({titl
 async function refreshCity(){if(!schedule||cityBusy)return;cityBusy=true;render();try{const d=await fetchCity();for(const t of d.teams){const i=schedule.teams.findIndex(x=>x.id===t.id);if(i>=0)schedule.teams[i]=t;else schedule.teams.push(t);}cityUpdated=d.fetchedAt;cityError=false;}catch{cityError=true;}finally{cityBusy=false;render();}}
 document.addEventListener('click',e=>{if(e.target.closest('#city-refresh'))refreshCity();});
 
-document.addEventListener('click',e=>{const button=e.target.closest('[data-calendar]');if(!button||!schedule)return;const team=schedule.teams.find(t=>t.id===new URLSearchParams(location.search).get('team'))||schedule.teams[0];const matches=button.dataset.calendar==='team'?team.matches:team.matches.filter(m=>m.id===button.dataset.calendar);if(matches.length)downloadCalendar(team,matches);});
+document.addEventListener('click',e=>{const button=e.target.closest('[data-calendar]');if(!button||!schedule)return;const team=schedule.teams.find(t=>t.id===new URLSearchParams(location.search).get('team'))||schedule.teams[0];openCalendarPicker(team);});
