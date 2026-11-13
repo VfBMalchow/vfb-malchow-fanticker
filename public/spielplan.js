@@ -4,7 +4,7 @@ import {renderTournaments} from './tournaments.js';
 import {mergeResults,availableTickers} from './spielplan-model.js';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let schedule,live={},loading=false,cityBusy=false,cityError=false,cityUpdated=null;
-const venueTown=venue=>venue?.match(/\b\d{5}\s+([^)]*)/)?.[1]?.trim()||'noch offen';
+const venueTown=venue=>venue?.match(/\b\d{5}\s+([^)]*)/)?.[1]?.trim()||venue?.trim()||'noch offen';
 const day=d=>new Intl.DateTimeFormat('de-DE',{weekday:'long',day:'2-digit',month:'long',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(d+'T12:00:00+01:00'));
 function render(){
  const requested=new URLSearchParams(location.search).get('team'),team=schedule.teams.find(t=>t.id===requested)||schedule.teams[0];
