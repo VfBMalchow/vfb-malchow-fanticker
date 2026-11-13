@@ -1,7 +1,7 @@
 {
   "season": "2026/27",
   "source": "https://www.meinspielplan.de/plan/zshcwv",
-  "fetchedAt": "2026-11-04T17:50:01.963Z",
+  "fetchedAt": "2026-11-13T15:11:58.631Z",
   "teams": [
     {
       "id": "stadtliga-malchower",
@@ -23,7 +23,7 @@
             "team1": 3,
             "team2": 1,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           }
         },
         {
@@ -39,7 +39,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           }
         },
         {
@@ -55,7 +55,7 @@
             "team1": 2,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           },
           "originalDate": "2026-10-27"
         },
@@ -68,7 +68,12 @@
           "team2": "Malchower Volleys",
           "venue": "Sporthalle Papenberg",
           "city": "Waren (Müritz)",
-          "result": null
+          "result": {
+            "team1": 3,
+            "team2": 2,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-13T15:11:58.631Z"
+          }
         },
         {
           "id": "stadtliga-59845380",
@@ -77,8 +82,8 @@
           "round": "Spieltag 5",
           "team1": "Malchower Volleys",
           "team2": "Feuerwache 1 Alpha",
-          "venue": "Sporthalle Malchow (Zetkin Ring) Di. 20:00 Uhr",
-          "city": "Malchow",
+          "venue": "Engelshalle Waren",
+          "city": "Waren (Müritz)",
           "result": null
         },
         {
@@ -191,7 +196,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           }
         },
         {
@@ -207,7 +212,7 @@
             "team1": 3,
             "team2": 0,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           }
         },
         {
@@ -223,7 +228,7 @@
             "team1": 0,
             "team2": 3,
             "source": "meinspielplan.de",
-            "recordedAt": "2026-11-04T17:50:01.963Z"
+            "recordedAt": "2026-11-13T15:11:58.631Z"
           }
         },
         {
@@ -235,7 +240,12 @@
           "team2": "VfB Volleys",
           "venue": "Gymnasium Waren Do. 20:00 Uhr",
           "city": "Waren (Müritz)",
-          "result": null
+          "result": {
+            "team1": 3,
+            "team2": 1,
+            "source": "meinspielplan.de",
+            "recordedAt": "2026-11-13T15:11:58.631Z"
+          }
         },
         {
           "id": "stadtliga-59600543",
