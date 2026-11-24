@@ -10,11 +10,11 @@ function render(){
  const requested=new URLSearchParams(location.search).get('team'),team=schedule.teams.find(t=>t.id===requested)||schedule.teams[0];
  $('#schedule-sync').hidden=team.source==='stadtliga';
  $('#team-picker').innerHTML=schedule.teams.map(t=>`<a class="team-choice ${t.id===team.id?'selected':''}" ${t.id===team.id?'aria-current="page"':''} href="?team=${encodeURIComponent(t.id)}">${esc(t.label)}<small>${t.source==='stadtliga'?'Stadtliga Waren':'VMV'}</small></a>`).join('');
- let html=`<div class="schedule-heading"><div><h2>${esc(team.label)}</h2><p>${esc(team.league)} · ${esc(schedule.season)}</p></div><div class="calendar-actions"><button data-calendar="team">Saison im Kalender speichern ↓</button><span class="badge">${team.matches.length} ${team.id.startsWith('u16')?'Termine':'Spiele'}</span></div></div><p class="calendar-note">Kalenderdatei zum Importieren · spätere Änderungen werden nicht automatisch übernommen.</p>`;
+ let html=`<div class="schedule-heading"><div><h2>${esc(team.label)}</h2><p>${esc(team.league)} · ${esc(schedule.season)}</p></div><div class="calendar-actions"><button data-calendar="team">Saison im Kalender speichern ↓</button><span class="badge">${team.matches.filter(match=>!match.didNotParticipate).length} ${team.id.startsWith('u16')?'Termine':'Spiele'}</span></div></div><p class="calendar-note">Kalenderdatei zum Importieren · spätere Änderungen werden nicht automatisch übernommen.</p>`;
  if(team.tournaments){
  const previous=$('#schedule-content [data-youth-team]');
  const openDates=previous?.dataset.youthTeam===team.id?new Set([...previous.querySelectorAll('details[open]')].map(d=>d.dataset.date)):null;
- $('#schedule-content').innerHTML=html+`<div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates)}</div>`;
+ $('#schedule-content').innerHTML=html+`<div data-youth-team="${esc(team.id)}">${renderTournaments(team.tournaments,openDates,team.matches)}</div>`;
  return;
  }
  if(team.source==='stadtliga')html+='<p class="schedule-note">Die Stadtliga-Ergebnisse werden manuell gepflegt.</p>';
@@ -42,4 +42,4 @@ $('#share').onclick=async()=>{try{if(navigator.share)await navigator.share({titl
 async function refreshCity(){if(!schedule||cityBusy)return;cityBusy=true;render();try{const d=await fetchCity();for(const t of d.teams){const i=schedule.teams.findIndex(x=>x.id===t.id);if(i>=0)schedule.teams[i]=t;else schedule.teams.push(t);}cityUpdated=d.fetchedAt;cityError=false;}catch{cityError=true;}finally{cityBusy=false;render();}}
 document.addEventListener('click',e=>{if(e.target.closest('#city-refresh'))refreshCity();});
 
-document.addEventListener('click',e=>{const button=e.target.closest('[data-calendar]');if(!button||!schedule)return;const team=schedule.teams.find(t=>t.id===new URLSearchParams(location.search).get('team'))||schedule.teams[0];openCalendarPicker(team);});
+document.addEventListener('click',e=>{const button=e.target.closest('[data-calendar]');if(!button||!schedule)return;const team=schedule.teams.find(t=>t.id===new URLSearchParams(location.search).get('team'))||schedule.teams[0];openCalendarPicker({...team,matches:team.matches.filter(match=>!match.didNotParticipate)});});
